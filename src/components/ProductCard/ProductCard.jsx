@@ -46,7 +46,7 @@ const ProductCard = ({ product }) => {
           )}
           {hasDiscount && (
             <div className={styles.discountBadge}>
-              <span className={styles.discountPercent}>-{discountPercent}%</span>
+              -{discountPercent}%
             </div>
           )}
         </div>
@@ -90,7 +90,7 @@ const ProductCard = ({ product }) => {
             </button>
             {product.inStock && (
               <button 
-                className={styles.actionButton}
+                className={`${styles.actionButton} ${styles.addButton}`}
                 onClick={handleQuickAdd}
               >
                 <FiShoppingCart />
@@ -110,7 +110,8 @@ const ProductCard = ({ product }) => {
           <div className={styles.footer}>
             <div className={styles.pricing}>
               <span className={styles.price}>
-                {product.price} <span className={styles.currency}>{product.currency}</span>
+                {product.price}
+                <span className={styles.currency}> {product.currency}</span>
               </span>
               {hasDiscount && (
                 <span className={styles.originalPrice}>

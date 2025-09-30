@@ -21,7 +21,6 @@ const OrderForm = ({ onClose }) => {
       ...prev,
       [name]: value
     }));
-    // Clear error when user starts typing
     if (errors[name]) {
       setErrors(prev => ({
         ...prev,
@@ -33,23 +32,15 @@ const OrderForm = ({ onClose }) => {
   const validateForm = () => {
     const newErrors = {};
 
-    if (!formData.name.trim()) {
-      newErrors.name = 'الاسم مطلوب';
-    }
+    if (!formData.name.trim()) newErrors.name = 'الاسم مطلوب';
 
-    if (!formData.phone.trim()) {
-      newErrors.phone = 'رقم الهاتف مطلوب';
-    } else if (!/^[0-9+\s-]{8,}$/.test(formData.phone)) {
-      newErrors.phone = 'رقم الهاتف غير صحيح';
-    }
+    if (!formData.phone.trim()) newErrors.phone = 'رقم الهاتف مطلوب';
+    else if (!/^[0-9+\s-]{8,}$/.test(formData.phone)) newErrors.phone = 'رقم الهاتف غير صحيح';
 
-    if (formData.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+    if (formData.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) 
       newErrors.email = 'البريد الإلكتروني غير صحيح';
-    }
 
-    if (!formData.address.trim()) {
-      newErrors.address = 'العنوان مطلوب';
-    }
+    if (!formData.address.trim()) newErrors.address = 'العنوان مطلوب';
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -58,13 +49,10 @@ const OrderForm = ({ onClose }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!validateForm()) {
-      return;
-    }
+    if (!validateForm()) return;
 
     setIsSubmitting(true);
 
-    // Prepare order message
     const orderDetails = cart.map(item => 
       `- ${item.nameAr} (${item.selectedSize || ''}) x${item.quantity} = ${item.price * item.quantity} DT`
     ).join('\n');
@@ -84,10 +72,9 @@ ${orderDetails}
 *المجموع الكلي:* ${getCartTotal()} DT
     `.trim();
 
-    const phoneNumber = '21626704717'; // Your WhatsApp number
+    const phoneNumber = '21626704717'; 
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
-    // Open WhatsApp
     window.open(whatsappUrl, '_blank');
 
     setTimeout(() => {
@@ -214,7 +201,7 @@ ${orderDetails}
               className={styles.submitButton}
               disabled={isSubmitting}
             >
-              {isSubmitting ? 'جاري الإرسال...' : 'تأكيد الطلب عبر واتساب'}
+              {isSubmitting ? 'جاري الإرسال...' : 'تأكيد الطلب'}
             </button>
           </form>
         </div>

@@ -38,7 +38,6 @@ const Cart = ({ onClose }) => {
                         اللون: <span className={styles.colorPreview} style={{ backgroundColor: item.selectedColor }}></span>
                       </p>
                     )}
-                    
                     <div className={styles.quantityControls}>
                       <button 
                         onClick={() => updateQuantity(item.id, item.selectedSize, item.selectedColor, item.quantity - 1)}
