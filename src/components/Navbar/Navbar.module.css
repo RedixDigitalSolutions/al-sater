@@ -1,0 +1,186 @@
+.navbar {
+    background: linear-gradient(135deg, #1a4d2e 0%, #2d5016 100%);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 0.8rem 0;
+    backdrop-filter: blur(10px);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.logoImage {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.logoText {
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.navLinks {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.navLink {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    font-family: 'Arial', sans-serif;
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.navLink:hover {
+    color: #ffd700;
+}
+
+.navLink::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #ffd700;
+    transition: width 0.3s ease;
+}
+
+.navLink:hover::after {
+    width: 100%;
+}
+
+.navActions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.cartButton {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+    backdrop-filter: blur(5px);
+}
+
+.cartButton:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+}
+
+.cartBadge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: #ff4444;
+    color: white;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(255, 68, 68, 0.4);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.menuToggle {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.menuToggle span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+@media (max-width: 768px) {
+    .logoImage {
+        height: 40px;
+    }
+
+    .logoText {
+        font-size: 1rem;
+    }
+
+    .navLinks {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: linear-gradient(135deg, #1a4d2e 0%, #2d5016 100%);
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 2rem;
+        transition: left 0.3s ease;
+    }
+
+    .navLinks.active {
+        left: 0;
+    }
+
+    .menuToggle {
+        display: flex;
+    }
+}

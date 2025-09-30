@@ -1,0 +1,7 @@
+use pictures for the Testimonials and make it look more modern 
+
+enhance the ProductCard and make it more modern and creative 
+
+enhacne the TrustBadges and use react icons or an icons libary for better result and 
+
+add social media links in the footer 

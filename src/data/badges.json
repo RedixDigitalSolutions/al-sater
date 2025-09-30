@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "icon": "FiTruck",
+    "title": "توصيل سريع",
+    "description": "توصيل لجميع أنحاء تونس في 24-48 ساعة",
+    "color": "#1a4d2e"
+  },
+  {
+    "id": 2,
+    "icon": "FiShield",
+    "title": "جودة مضمونة",
+    "description": "منتجات عالية الجودة 100%",
+    "color": "#2d5016"
+  },
+  {
+    "id": 3,
+    "icon": "FiLock",
+    "title": "دفع آمن",
+    "description": "الدفع عند التوصيل",
+    "color": "#4a7c59"
+  }
+]
