@@ -3,12 +3,13 @@ import { Link } from 'react-router-dom';
 import { FiShoppingCart, FiEye, FiHeart } from 'react-icons/fi';
 import { BsLightningChargeFill } from 'react-icons/bs';
 import QuickView from '../QuickView/QuickView';
+import Popup from '../Popup/Popup';
 import { useCart } from '../../context/CartContext';
 import styles from './ProductCard.module.css';
-import Popup from '../Popup/Popup';
 
 const ProductCard = ({ product }) => {
   const [showQuickView, setShowQuickView] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
   const [isWishlisted, setIsWishlisted] = useState(false);
   const { addToCart } = useCart();
   
@@ -21,6 +22,7 @@ const ProductCard = ({ product }) => {
     e.preventDefault();
     if (product.inStock) {
       addToCart(product, product.sizes[0], product.colors[0], 1);
+      setShowPopup(true);
     }
   };
 
@@ -140,6 +142,16 @@ const ProductCard = ({ product }) => {
         <QuickView 
           product={product} 
           onClose={() => setShowQuickView(false)} 
+        />
+      )}
+
+      {showPopup && (
+        <Popup 
+          product={product} 
+          onClose={() => setShowPopup(false)}
+          onConfirm={() => {
+            setShowPopup(false);
+          }}
         />
       )}
     </>

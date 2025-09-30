@@ -109,113 +109,115 @@ ${orderDetails}
           <p className={styles.subtitle}>املأ البيانات لإكمال طلبك</p>
         </div>
 
-        <div className={styles.orderSummary}>
-          <h3>ملخص الطلب</h3>
-          <div className={styles.items}>
-            {cart.map((item, index) => (
-              <div key={index} className={styles.summaryItem}>
-                <img src={item.images[0]} alt={item.nameAr} />
-                <div className={styles.itemInfo}>
-                  <span>{item.nameAr}</span>
-                  <small>{item.selectedSize} × {item.quantity}</small>
+        <div className={styles.scrollableContent}>
+          <div className={styles.orderSummary}>
+            <h3>ملخص الطلب</h3>
+            <div className={styles.items}>
+              {cart.map((item, index) => (
+                <div key={index} className={styles.summaryItem}>
+                  <img src={item.images[0]} alt={item.nameAr} />
+                  <div className={styles.itemInfo}>
+                    <span>{item.nameAr}</span>
+                    <small>{item.selectedSize} × {item.quantity}</small>
+                  </div>
+                  <span className={styles.itemPrice}>{item.price * item.quantity} DT</span>
                 </div>
-                <span className={styles.itemPrice}>{item.price * item.quantity} DT</span>
-              </div>
-            ))}
+              ))}
+            </div>
+            <div className={styles.total}>
+              <span>المجموع الكلي:</span>
+              <span className={styles.totalAmount}>{getCartTotal()} DT</span>
+            </div>
           </div>
-          <div className={styles.total}>
-            <span>المجموع الكلي:</span>
-            <span className={styles.totalAmount}>{getCartTotal()} DT</span>
-          </div>
+
+          <form onSubmit={handleSubmit} className={styles.form}>
+            <div className={styles.formGroup}>
+              <label htmlFor="name">
+                <FiUser /> الاسم الكامل <span className={styles.required}>*</span>
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                placeholder="أدخل اسمك الكامل"
+                className={errors.name ? styles.error : ''}
+              />
+              {errors.name && <span className={styles.errorMessage}>{errors.name}</span>}
+            </div>
+
+            <div className={styles.formGroup}>
+              <label htmlFor="phone">
+                <FiPhone /> رقم الهاتف <span className={styles.required}>*</span>
+              </label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
+                placeholder="+216 XX XXX XXX"
+                className={errors.phone ? styles.error : ''}
+              />
+              {errors.phone && <span className={styles.errorMessage}>{errors.phone}</span>}
+            </div>
+
+            <div className={styles.formGroup}>
+              <label htmlFor="email">
+                <FiMail /> البريد الإلكتروني <span className={styles.optional}>(اختياري)</span>
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="example@email.com"
+                className={errors.email ? styles.error : ''}
+              />
+              {errors.email && <span className={styles.errorMessage}>{errors.email}</span>}
+            </div>
+
+            <div className={styles.formGroup}>
+              <label htmlFor="address">
+                <FiMapPin /> العنوان <span className={styles.required}>*</span>
+              </label>
+              <textarea
+                id="address"
+                name="address"
+                value={formData.address}
+                onChange={handleChange}
+                placeholder="المدينة، الحي، الشارع، رقم المنزل..."
+                rows="3"
+                className={errors.address ? styles.error : ''}
+              />
+              {errors.address && <span className={styles.errorMessage}>{errors.address}</span>}
+            </div>
+
+            <div className={styles.formGroup}>
+              <label htmlFor="message">
+                <FiMessageSquare /> ملاحظات إضافية <span className={styles.optional}>(اختياري)</span>
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                placeholder="أي ملاحظات أو طلبات خاصة..."
+                rows="3"
+              />
+            </div>
+
+            <button 
+              type="submit" 
+              className={styles.submitButton}
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? 'جاري الإرسال...' : 'تأكيد الطلب عبر واتساب'}
+            </button>
+          </form>
         </div>
-
-        <form onSubmit={handleSubmit} className={styles.form}>
-          <div className={styles.formGroup}>
-            <label htmlFor="name">
-              <FiUser /> الاسم الكامل <span className={styles.required}>*</span>
-            </label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              placeholder="أدخل اسمك الكامل"
-              className={errors.name ? styles.error : ''}
-            />
-            {errors.name && <span className={styles.errorMessage}>{errors.name}</span>}
-          </div>
-
-          <div className={styles.formGroup}>
-            <label htmlFor="phone">
-              <FiPhone /> رقم الهاتف <span className={styles.required}>*</span>
-            </label>
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              value={formData.phone}
-              onChange={handleChange}
-              placeholder="+216 XX XXX XXX"
-              className={errors.phone ? styles.error : ''}
-            />
-            {errors.phone && <span className={styles.errorMessage}>{errors.phone}</span>}
-          </div>
-
-          <div className={styles.formGroup}>
-            <label htmlFor="email">
-              <FiMail /> البريد الإلكتروني <span className={styles.optional}>(اختياري)</span>
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              placeholder="example@email.com"
-              className={errors.email ? styles.error : ''}
-            />
-            {errors.email && <span className={styles.errorMessage}>{errors.email}</span>}
-          </div>
-
-          <div className={styles.formGroup}>
-            <label htmlFor="address">
-              <FiMapPin /> العنوان <span className={styles.required}>*</span>
-            </label>
-            <textarea
-              id="address"
-              name="address"
-              value={formData.address}
-              onChange={handleChange}
-              placeholder="المدينة، الحي، الشارع، رقم المنزل..."
-              rows="3"
-              className={errors.address ? styles.error : ''}
-            />
-            {errors.address && <span className={styles.errorMessage}>{errors.address}</span>}
-          </div>
-
-          <div className={styles.formGroup}>
-            <label htmlFor="message">
-              <FiMessageSquare /> ملاحظات إضافية <span className={styles.optional}>(اختياري)</span>
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              placeholder="أي ملاحظات أو طلبات خاصة..."
-              rows="3"
-            />
-          </div>
-
-          <button 
-            type="submit" 
-            className={styles.submitButton}
-            disabled={isSubmitting}
-          >
-            {isSubmitting ? 'جاري الإرسال...' : 'تأكيد الطلب عبر واتساب'}
-          </button>
-        </form>
       </div>
     </div>
   );
