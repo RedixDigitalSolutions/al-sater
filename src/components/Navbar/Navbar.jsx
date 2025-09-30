@@ -14,7 +14,7 @@ const Navbar = () => {
       <nav className={styles.navbar}>
         <div className={styles.container}>
           <Link to="/" className={styles.logo}>
-            <img src="/logo.webp" alt="الساتر" className={styles.logoImage} />
+            <img src="/al-sater/logo.png" alt="الساتر" className={styles.logoImage} />
             <span className={styles.logoText}>AL-SATER</span>
           </Link>
 

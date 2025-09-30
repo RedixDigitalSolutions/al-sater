@@ -36,7 +36,7 @@ const Footer = () => {
         <div className={styles.topSection}>
           <div className={styles.brandSection}>
             <div className={styles.logoWrapper}>
-              <img src="/logo.png" alt="الساتر" className={styles.logo} />
+              <img src="/al-sater/logo.png" alt="الساتر" className={styles.logo} />
               <h3 className={styles.brandName}>الساتر</h3>
             </div>
             <p className={styles.tagline}>منتجات إسلامية عصرية للرجل المسلم</p>
@@ -66,7 +66,7 @@ const Footer = () => {
               </li>
               <li>
                 <FiPhone className={styles.contactIcon} />
-                <a href="tel:+21612345678">+216 12 345 678</a>
+                <a href="tel:+21626704717">+216 26 704 717</a>
               </li>
               <li>
                 <FiMapPin className={styles.contactIcon} />

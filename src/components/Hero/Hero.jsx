@@ -17,7 +17,7 @@ const Hero = () => {
         </a>
       </div>
       <div className={styles.bannerImage}>
-        <img src="/banner.png" alt="Al-Sater Banner" />
+        <img src="/al-sater/banner.png" alt="Al-Sater Banner" />
       </div>
     </section>
   );
