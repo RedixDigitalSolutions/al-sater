@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useCart } from '../../context/CartContext';
 import Cart from '../Cart/Cart';
 import styles from './Navbar.module.css';
-import logo from '/al-sater/logo.webp';
+import logo from '/logo.webp';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

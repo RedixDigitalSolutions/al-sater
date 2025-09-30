@@ -1,6 +1,7 @@
 import { FaFacebookF, FaInstagram, FaWhatsapp, FaTiktok } from 'react-icons/fa';
 import { FiMail, FiPhone, FiMapPin } from 'react-icons/fi';
 import styles from './Footer.module.css';
+import logo from '/logo.webp';
 
 const Footer = () => {
   const socialLinks = [
@@ -36,7 +37,7 @@ const Footer = () => {
         <div className={styles.topSection}>
           <div className={styles.brandSection}>
             <div className={styles.logoWrapper}>
-              <img src="/al-sater/logo.webp" alt="الساتر" className={styles.logo} />
+              <img src={logo} alt="الساتر" className={styles.logo} />
               <h3 className={styles.brandName}>الساتر</h3>
             </div>
             <p className={styles.tagline}>منتجات إسلامية عصرية للرجل المسلم</p>
