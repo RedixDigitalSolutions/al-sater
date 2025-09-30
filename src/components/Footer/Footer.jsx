@@ -36,7 +36,7 @@ const Footer = () => {
         <div className={styles.topSection}>
           <div className={styles.brandSection}>
             <div className={styles.logoWrapper}>
-              <img src="/al-sater/logo.png" alt="الساتر" className={styles.logo} />
+              <img src="/al-sater/logo.webp" alt="الساتر" className={styles.logo} />
               <h3 className={styles.brandName}>الساتر</h3>
             </div>
             <p className={styles.tagline}>منتجات إسلامية عصرية للرجل المسلم</p>
