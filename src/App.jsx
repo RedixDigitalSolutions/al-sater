@@ -9,7 +9,7 @@ import styles from './App.module.css';
 function App() {
   return (
     <CartProvider>
-      <Router>
+      <Router basename="/al-sater">
         <div className={styles.app}>
           <Navbar />
           <main className={styles.main}>
