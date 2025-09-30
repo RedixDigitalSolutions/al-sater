@@ -5,6 +5,7 @@ import { BsLightningChargeFill } from 'react-icons/bs';
 import QuickView from '../QuickView/QuickView';
 import { useCart } from '../../context/CartContext';
 import styles from './ProductCard.module.css';
+import Popup from '../Popup/Popup';
 
 const ProductCard = ({ product }) => {
   const [showQuickView, setShowQuickView] = useState(false);

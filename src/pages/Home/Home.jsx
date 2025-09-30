@@ -11,8 +11,15 @@ const Home = () => {
     <div className={styles.home}>
       <Hero />
       <TrustBadges />
-      <ProductGrid products={products} title="منتجاتنا" />
-      <Testimonials />
+      <div id="products">
+        <ProductGrid products={products} title="منتجاتنا" />
+      </div>
+      <div id="about">
+        <Testimonials />
+      </div>
+      <div id="contact">
+        {/* You can add a contact section here */}
+      </div>
       <WhatsAppButton />
     </div>
   );

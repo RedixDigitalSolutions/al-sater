@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useCart } from '../../context/CartContext';
 import Cart from '../Cart/Cart';
 import styles from './Navbar.module.css';
@@ -9,6 +9,28 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const { getCartCount } = useCart();
+  const location = useLocation();
+
+  const scrollToSection = (sectionId) => {
+    setIsMenuOpen(false);
+    
+    if (location.pathname !== '/') {
+      window.location.href = `/#${sectionId}`;
+      return;
+    }
+
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const offset = 80; // Height of fixed navbar
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
 
   return (
     <>
@@ -20,10 +42,31 @@ const Navbar = () => {
           </Link>
 
           <div className={`${styles.navLinks} ${isMenuOpen ? styles.active : ''}`}>
-            <Link to="/" className={styles.navLink}>الرئيسية</Link>
-            <Link to="/#products" className={styles.navLink}>المنتجات</Link>
-            <a href="#about" className={styles.navLink}>من نحن</a>
-            <a href="#contact" className={styles.navLink}>تواصل معنا</a>
+            <Link 
+              to="/" 
+              className={styles.navLink}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              الرئيسية
+            </Link>
+            <button 
+              className={styles.navLink}
+              onClick={() => scrollToSection('products')}
+            >
+              المنتجات
+            </button>
+            <button 
+              className={styles.navLink}
+              onClick={() => scrollToSection('about')}
+            >
+              من نحن
+            </button>
+            <button 
+              className={styles.navLink}
+              onClick={() => scrollToSection('contact')}
+            >
+              تواصل معنا
+            </button>
           </div>
 
           <div className={styles.navActions}>
