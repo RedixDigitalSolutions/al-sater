@@ -12,16 +12,16 @@ const products = [
     sizes: ['S', 'M', 'L', 'XL', 'XXL', 'XXXL'],
     colors: ['#e3cabc', '#000000', '#63616d'],
     images: [
-      '/assets/Alsater T-Shirt/1.webp',
-      '/assets/Alsater T-Shirt/2.webp',
-      '/assets/Alsater T-Shirt/3.webp',
-      '/assets/Alsater T-Shirt/4.webp',
-      '/assets/Alsater T-Shirt/5.webp',
-      '/assets/Alsater T-Shirt/6.webp',
-      '/assets/Alsater T-Shirt/7.webp',
-      '/assets/Alsater T-Shirt/8.webp',
-      '/assets/Alsater T-Shirt/9.webp',
-      '/assets/Alsater T-Shirt/10.webp'
+      '/al-sater/assets/Alsater T-Shirt/1.webp',
+      '/al-sater/assets/Alsater T-Shirt/2.webp',
+      '/al-sater/assets/Alsater T-Shirt/3.webp',
+      '/al-sater/assets/Alsater T-Shirt/4.webp',
+      '/al-sater/assets/Alsater T-Shirt/5.webp',
+      '/al-sater/assets/Alsater T-Shirt/6.webp',
+      '/al-sater/assets/Alsater T-Shirt/7.webp',
+      '/al-sater/assets/Alsater T-Shirt/8.webp',
+      '/al-sater/assets/Alsater T-Shirt/9.webp',
+      '/al-sater/assets/Alsater T-Shirt/10.webp'
     ],
     description: 'Premium quality Islamic t-shirt',
     descriptionAr: 'تيشيرت إسلامي بجودة عالية',
@@ -44,10 +44,10 @@ const products = [
     sizes: ['S-XL'],
     colors: [],
     images: [
-      '/assets/Awracover/1.webp',
-      '/assets/Awracover/2.webp',
-      '/assets/Awracover/3.webp',
-      '/assets/Awracover/4.webp'
+      '/al-sater/assets/Awracover/1.webp',
+      '/al-sater/assets/Awracover/2.webp',
+      '/al-sater/assets/Awracover/3.webp',
+      '/al-sater/assets/Awracover/4.webp'
     ],
     description: 'Modesty cover for Muslim men during swimming, sports, and prayer',
     descriptionAr: 'ساتر العورة هو منتج مبتكر مقدم من علامة الساتر، صُمّم خصيصًا لتوفير الستر والراحة للرجل المسلم أثناء ممارسة الأنشطة اليومية مثل السباحة، والرياضة، وحتى الصلاة. يأتي على شكل حزام قماشي رفيع ومرن، يغطي المنطقة ما بين السُّرّة وأعلى الخصر، بما يتوافق مع الضوابط الشرعية للستر.',
@@ -79,10 +79,10 @@ const products = [
     sizes: ['S-XL'],
     colors: ['#000000'],
     images: [
-      '/assets/BlackClassicAwraCover/1.webp',
-      '/assets/BlackClassicAwraCover/2.webp',
-      '/assets/BlackClassicAwraCover/3.webp',
-      '/assets/BlackClassicAwraCover/4.webp'
+      '/al-sater/assets/BlackClassicAwraCover/1.webp',
+      '/al-sater/assets/BlackClassicAwraCover/2.webp',
+      '/al-sater/assets/BlackClassicAwraCover/3.webp',
+      '/al-sater/assets/BlackClassicAwraCover/4.webp'
     ],
     description: 'Classic black modesty cover',
     descriptionAr: 'ساتر العورة الكلاسيكي باللون الأسود',
@@ -107,9 +107,9 @@ const products = [
     sizes: ['S-L', 'XL-XXXXL'],
     colors: ['#000000'],
     images: [
-      '/assets/BlackPremiumAwraCover/1.webp',
-      '/assets/BlackPremiumAwraCover/2.webp',
-      '/assets/BlackPremiumAwraCover/3.webp'
+      '/al-sater/assets/BlackPremiumAwraCover/1.webp',
+      '/al-sater/assets/BlackPremiumAwraCover/2.webp',
+      '/al-sater/assets/BlackPremiumAwraCover/3.webp'
     ],
     description: 'Premium black modesty cover with enhanced quality',
     descriptionAr: 'ساتر العورة البريميوم باللون الأسود بجودة محسنة',
@@ -135,10 +135,10 @@ const products = [
     sizes: ['S-XL'],
     colors: ['#2d5016'],
     images: [
-      '/assets/GreenClassicAwraCover/1.webp',
-      '/assets/GreenClassicAwraCover/2.webp',
-      '/assets/GreenClassicAwraCover/3.webp',
-      '/assets/GreenClassicAwraCover/4.webp'
+      '/al-sater/assets/GreenClassicAwraCover/1.webp',
+      '/al-sater/assets/GreenClassicAwraCover/2.webp',
+      '/al-sater/assets/GreenClassicAwraCover/3.webp',
+      '/al-sater/assets/GreenClassicAwraCover/4.webp'
     ],
     description: 'Classic green modesty cover',
     descriptionAr: 'ساتر العورة الكلاسيكي باللون الأخضر',
