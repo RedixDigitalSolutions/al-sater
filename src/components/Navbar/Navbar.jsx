@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useCart } from '../../context/CartContext';
 import Cart from '../Cart/Cart';
 import styles from './Navbar.module.css';
+import logo from '/al-sater/logo.webp';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -14,7 +15,7 @@ const Navbar = () => {
       <nav className={styles.navbar}>
         <div className={styles.container}>
           <Link to="/" className={styles.logo}>
-            <img src="/al-sater/logo.webp" alt="الساتر" className={styles.logoImage} />
+            <img src={logo} alt="الساتر" className={styles.logoImage} />
             <span className={styles.logoText}>AL-SATER</span>
           </Link>
 
